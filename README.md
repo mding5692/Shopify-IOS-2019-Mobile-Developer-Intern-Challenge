@@ -1,7 +1,9 @@
 Problem
+
 You're a successful Shopify merchant with many collections of products! You’d like to keep an eye on your collections. Let’s create an app that displays a Custom Collections list page and a Collection Details page. Your app will fetch the data from the Shopify Custom Collections REST API.
 
 Custom Collections list page: A simple list of every custom collection (e.g. In our above response you will see we will need cells for: Aerodynamic, Durable and Small). Tapping on a collection launches the Collection Details page. 
+
 Collection Details page: A list of every product for a specific collection. Each row in the list needs to contain, at a minimum: 
 The name of the product
 The total available inventory across all variants of the product
@@ -35,6 +37,9 @@ Feeling adventurous? In the Collection Details page add the collection details i
 
 What you need to submit:
 A screenshot of your app showing the Custom Collections list page
+
 A screenshot of your app showing the Collection Details page after clicking on “Aerodynamic” from the Custom Collections list page
+
 Your project code (A link to your hosted version where it can be tested).
+
 Please include a Zip file with your screenshots and submit a link for your working code in the “Mobile Challenge Submission” section of the application. 
