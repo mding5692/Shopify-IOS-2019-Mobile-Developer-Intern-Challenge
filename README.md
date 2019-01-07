@@ -4,10 +4,16 @@ You're a successful Shopify merchant with many collections of products! You’d 
 
 Custom Collections list page: A simple list of every custom collection (e.g. In our above response you will see we will need cells for: Aerodynamic, Durable and Small). Tapping on a collection launches the Collection Details page. 
 
-Collection Details page: A list of every product for a specific collection. Each row in the list needs to contain, at a minimum: 
+Collection Details page: A list of every product for a specific collection. 
+
+Each row in the list needs to contain, at a minimum: 
+
 The name of the product
+
 The total available inventory across all variants of the product
+
 The collection title
+
 The collection image
 
 
