@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		1A2F773BF26C33A2A35FAFB6 /* Pods_Shopify_Intern_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C09CC4C13E4184CA960CD16 /* Pods_Shopify_Intern_ChallengeTests.framework */; };
 		AAE4131121E48AE500BECB40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4131021E48AE500BECB40 /* AppDelegate.swift */; };
-		AAE4131321E48AE500BECB40 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4131221E48AE500BECB40 /* ViewController.swift */; };
+		AAE4131321E48AE500BECB40 /* CustomCollectionsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4131221E48AE500BECB40 /* CustomCollectionsListViewController.swift */; };
 		AAE4131621E48AE500BECB40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE4131421E48AE500BECB40 /* Main.storyboard */; };
 		AAE4131821E48AEC00BECB40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE4131721E48AEC00BECB40 /* Assets.xcassets */; };
 		AAE4131B21E48AEC00BECB40 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAE4131921E48AEC00BECB40 /* LaunchScreen.storyboard */; };
 		AAE4132621E48AED00BECB40 /* Shopify_Intern_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4132521E48AED00BECB40 /* Shopify_Intern_ChallengeTests.swift */; };
 		AAE4133121E48AED00BECB40 /* Shopify_Intern_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4133021E48AED00BECB40 /* Shopify_Intern_ChallengeUITests.swift */; };
 		AAE4134121E48C4E00BECB40 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = AAE4134021E48C4E00BECB40 /* Podfile */; };
+		AAE4134421E5524B00BECB40 /* ShopifyAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4134321E5524B00BECB40 /* ShopifyAPIService.swift */; };
+		AAE4134721E5630D00BECB40 /* CustomCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4134621E5630D00BECB40 /* CustomCollection.swift */; };
+		AAE4134921E5668800BECB40 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE4134821E5668800BECB40 /* Product.swift */; };
 		EFDC3FFBD0CCB54752A51F4F /* Pods_Shopify_Intern_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ED85C5EA96E7980704A4EC0 /* Pods_Shopify_Intern_ChallengeUITests.framework */; };
 		F3068C756ADCA0E4E99CB288 /* Pods_Shopify_Intern_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C494D776D81D13B11BD28C1 /* Pods_Shopify_Intern_Challenge.framework */; };
 /* End PBXBuildFile section */
@@ -45,7 +48,7 @@
 		A72258386BD803A99AC469F4 /* Pods-Shopify-Intern-Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify-Intern-Challenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopify-Intern-Challenge/Pods-Shopify-Intern-Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		AAE4130D21E48AE500BECB40 /* Shopify-Intern-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Shopify-Intern-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE4131021E48AE500BECB40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AAE4131221E48AE500BECB40 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AAE4131221E48AE500BECB40 /* CustomCollectionsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionsListViewController.swift; sourceTree = "<group>"; };
 		AAE4131521E48AE500BECB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AAE4131721E48AEC00BECB40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AAE4131A21E48AEC00BECB40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +60,9 @@
 		AAE4133021E48AED00BECB40 /* Shopify_Intern_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopify_Intern_ChallengeUITests.swift; sourceTree = "<group>"; };
 		AAE4133221E48AED00BECB40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AAE4134021E48C4E00BECB40 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		AAE4134321E5524B00BECB40 /* ShopifyAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopifyAPIService.swift; sourceTree = "<group>"; };
+		AAE4134621E5630D00BECB40 /* CustomCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollection.swift; sourceTree = "<group>"; };
+		AAE4134821E5668800BECB40 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		AC451FE29B15A49362D9ECDA /* Pods-Shopify-Intern-ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify-Intern-ChallengeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopify-Intern-ChallengeUITests/Pods-Shopify-Intern-ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C035EF1C6EE9ED6BD7597208 /* Pods-Shopify-Intern-ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify-Intern-ChallengeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Shopify-Intern-ChallengeTests/Pods-Shopify-Intern-ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F1CBE374D1EE6836AE6B97AE /* Pods-Shopify-Intern-Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Shopify-Intern-Challenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-Shopify-Intern-Challenge/Pods-Shopify-Intern-Challenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -127,9 +133,11 @@
 		AAE4130F21E48AE500BECB40 /* Shopify-Intern-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				AAE4134521E562FE00BECB40 /* Models */,
+				AAE4134221E54D2500BECB40 /* Services */,
 				AAE4133F21E48B3E00BECB40 /* Misc */,
 				AAE4133E21E48B0000BECB40 /* Storyboards */,
-				AAE4131221E48AE500BECB40 /* ViewController.swift */,
+				AAE4131221E48AE500BECB40 /* CustomCollectionsListViewController.swift */,
 				AAE4131C21E48AEC00BECB40 /* Info.plist */,
 			);
 			path = "Shopify-Intern-Challenge";
@@ -169,6 +177,23 @@
 				AAE4131721E48AEC00BECB40 /* Assets.xcassets */,
 			);
 			path = Misc;
+			sourceTree = "<group>";
+		};
+		AAE4134221E54D2500BECB40 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				AAE4134321E5524B00BECB40 /* ShopifyAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		AAE4134521E562FE00BECB40 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAE4134621E5630D00BECB40 /* CustomCollection.swift */,
+				AAE4134821E5668800BECB40 /* Product.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BB4801A3036DA82218CD326E /* Pods */ = {
@@ -411,7 +436,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAE4131321E48AE500BECB40 /* ViewController.swift in Sources */,
+				AAE4134721E5630D00BECB40 /* CustomCollection.swift in Sources */,
+				AAE4131321E48AE500BECB40 /* CustomCollectionsListViewController.swift in Sources */,
+				AAE4134921E5668800BECB40 /* Product.swift in Sources */,
+				AAE4134421E5524B00BECB40 /* ShopifyAPIService.swift in Sources */,
 				AAE4131121E48AE500BECB40 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
