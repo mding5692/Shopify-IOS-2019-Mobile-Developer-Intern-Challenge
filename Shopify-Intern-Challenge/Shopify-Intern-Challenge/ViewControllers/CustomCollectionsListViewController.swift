@@ -10,7 +10,10 @@ import UIKit
 
 class CustomCollectionsListViewController: UIViewController {
     
+    // MARK: -- IBOutlets
     @IBOutlet weak var customCollectionsTableView: UITableView!
+    
+    // MARK: -- Properties
     var customCollectionsData = [CustomCollection]()
     
     override func viewDidLoad() {
@@ -26,7 +29,7 @@ class CustomCollectionsListViewController: UIViewController {
 
 }
 
-// MARK: -- Handles customCollectionsTableView delegate & datasource functions
+// MARK: -- Handles customCollectionsTableView delegate, datasource & related functions
 extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewDataSource {
     fileprivate func initiateCustomCollectionsTableView() {
         customCollectionsTableView.delegate = self
@@ -45,11 +48,16 @@ extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let collectionID = customCollectionsData[indexPath.row].collectionID
+        let selectedCollection = customCollectionsData[indexPath.row]
         
-        ShopifyAPIService.main.getCollection(for: collectionID) { products in
-            print(products)
-        }
+        // Sets data for collection details view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let collectionDetailsVC = storyboard.instantiateViewController(withIdentifier: "CollectionDetails") as! CollectionDetailsViewController
+        collectionDetailsVC.title = selectedCollection.collectionName
+        collectionDetailsVC.selectedCollectionData = selectedCollection
+        collectionDetailsVC.collectionID = selectedCollection.collectionID
+        
+        self.navigationController?.pushViewController(collectionDetailsVC, animated: true)
     }
     
 }
