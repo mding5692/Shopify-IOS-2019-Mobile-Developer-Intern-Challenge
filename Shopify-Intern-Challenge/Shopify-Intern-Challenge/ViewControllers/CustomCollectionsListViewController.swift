@@ -16,9 +16,9 @@ class CustomCollectionsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Grabs data from Shopify API and populates customCollectionsTableView
+        // Grabs custom collections data from Shopify API and populates customCollectionsTableView
         initiateCustomCollectionsTableView()
-        ShopifyAPIService.main.grabCollections() { collectionData in
+        ShopifyAPIService.main.getCustomCollections() { collectionData in
             self.customCollectionsData = collectionData
             self.customCollectionsTableView.reloadData()
         }
@@ -58,7 +58,11 @@ extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let collectionID = customCollectionsData[indexPath.row].collectionID
+        
+        ShopifyAPIService.main.getCollection(for: collectionID) { products in
+            print(products)
+        }
     }
     
 }

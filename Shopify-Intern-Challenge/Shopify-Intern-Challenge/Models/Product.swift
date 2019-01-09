@@ -10,5 +10,8 @@ import Foundation
 
 struct Product {
     let productName: String
-    let productID: String
+    let productID: Int
+    let availableInventory: Int
+    let numOfVariants: Int
+    let productType: String
 }
