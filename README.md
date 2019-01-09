@@ -1,6 +1,6 @@
 Problem
 
-You're a successful Shopify merchant with many collections of products! You’d like to keep an eye on your collections. Let’s create an app that displays a Custom Collections list page and a Collection Details page. Your app will fetch the data from the Shopify Custom Collections REST API.
+You're a successful Shopify merchant with many collections of products! You’d like to keep an eye on your collections. Let’s create an app that displays a Custom Collections list page and a Collection Details page. Your app will fetch the data from the Shopify Custom Collections REST API: https://shopicruit.myshopify.com/admin/custom_collections.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6
 
 Custom Collections list page: A simple list of every custom collection (e.g. In our above response you will see we will need cells for: Aerodynamic, Durable and Small). Tapping on a collection launches the Collection Details page. 
 
