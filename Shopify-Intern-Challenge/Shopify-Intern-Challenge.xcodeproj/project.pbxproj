@@ -133,11 +133,11 @@
 		AAE4130F21E48AE500BECB40 /* Shopify-Intern-Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				AAE4134A21E5A0D800BECB40 /* ViewControllers */,
 				AAE4134521E562FE00BECB40 /* Models */,
 				AAE4134221E54D2500BECB40 /* Services */,
 				AAE4133F21E48B3E00BECB40 /* Misc */,
 				AAE4133E21E48B0000BECB40 /* Storyboards */,
-				AAE4131221E48AE500BECB40 /* CustomCollectionsListViewController.swift */,
 				AAE4131C21E48AEC00BECB40 /* Info.plist */,
 			);
 			path = "Shopify-Intern-Challenge";
@@ -194,6 +194,14 @@
 				AAE4134821E5668800BECB40 /* Product.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		AAE4134A21E5A0D800BECB40 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAE4131221E48AE500BECB40 /* CustomCollectionsListViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		BB4801A3036DA82218CD326E /* Pods */ = {

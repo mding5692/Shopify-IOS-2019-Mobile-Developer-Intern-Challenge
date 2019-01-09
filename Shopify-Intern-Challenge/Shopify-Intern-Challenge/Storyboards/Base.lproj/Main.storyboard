@@ -19,35 +19,45 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uIq-i3-rrS">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ceB-2Y-Gos">
+                                        <rect key="frame" x="38" y="84" width="299" height="519"/>
+                                        <color key="backgroundColor" red="0.25490196079999999" green="0.30980392159999998" blue="0.24313725489999999" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <color key="separatorColor" red="0.062745098039215685" green="0.50196078431372548" blue="0.2627450980392157" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollectionCell" id="uaM-f6-fMg">
+                                                <rect key="frame" x="0.0" y="28" width="299" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uaM-f6-fMg" id="Z1L-rY-vHT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="299" height="44"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" red="0.73333333333333328" green="0.89803921568627454" blue="0.70196078431372544" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Custom Collections" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P54-DQ-B8b">
+                                        <rect key="frame" x="83.5" y="39" width="208.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
+                                        <color key="textColor" red="0.25490196078431371" green="0.30980392156862746" blue="0.24313725490196078" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.89019607840000003" green="0.94509803920000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ceB-2Y-Gos">
-                                <rect key="frame" x="38" y="62" width="299" height="563"/>
-                                <color key="backgroundColor" red="0.25490196079999999" green="0.30980392159999998" blue="0.24313725489999999" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                <color key="separatorColor" red="0.25490196079999999" green="0.30980392159999998" blue="0.24313725489999999" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CollectionCell" id="uaM-f6-fMg">
-                                        <rect key="frame" x="0.0" y="28" width="299" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uaM-f6-fMg" id="Z1L-rY-vHT">
-                                            <rect key="frame" x="0.0" y="0.0" width="299" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" red="0.73333333333333328" green="0.89803921568627454" blue="0.70196078431372544" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ceB-2Y-Gos" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="42" id="1mm-xQ-cFo"/>
-                            <constraint firstItem="ceB-2Y-Gos" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="3f0-lS-Tmf"/>
+                            <constraint firstItem="ceB-2Y-Gos" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="9jH-Eo-al4"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ceB-2Y-Gos" secondAttribute="bottom" constant="64" id="GoJ-ln-l9l"/>
                             <constraint firstItem="uIq-i3-rrS" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Id4-j9-R3I"/>
-                            <constraint firstItem="ceB-2Y-Gos" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="JUd-Ag-Hsh"/>
+                            <constraint firstItem="ceB-2Y-Gos" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="KRU-zp-HhI"/>
+                            <constraint firstItem="ceB-2Y-Gos" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="R7H-Y5-cyk"/>
+                            <constraint firstItem="P54-DQ-B8b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="19" id="dzD-1l-DXt"/>
                             <constraint firstItem="uIq-i3-rrS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="fQh-xj-1vr"/>
                             <constraint firstItem="uIq-i3-rrS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="hyF-dZ-1uh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="uIq-i3-rrS" secondAttribute="top" constant="20" id="nKa-u3-J7n"/>
-                            <constraint firstItem="ceB-2Y-Gos" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="yIP-Wq-o0A"/>
+                            <constraint firstItem="P54-DQ-B8b" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="z0n-Ny-1Dh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
