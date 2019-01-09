@@ -10,5 +10,7 @@ import Foundation
 
 struct CustomCollection {
     let collectionName: String
-    let collectionID: String
+    let collectionID: Int
+    let collectionImgURL: URL
+    let collectionTitle: String
 }
