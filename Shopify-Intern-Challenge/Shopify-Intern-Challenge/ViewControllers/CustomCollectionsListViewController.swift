@@ -31,20 +31,6 @@ extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewD
     fileprivate func initiateCustomCollectionsTableView() {
         customCollectionsTableView.delegate = self
         customCollectionsTableView.dataSource = self
-        
-        // Shadow and curved borders for tableView
-        let containerView = UIView(frame: customCollectionsTableView.frame)
-        containerView.backgroundColor = .clear
-        containerView.layer.shadowColor = UIColor.darkGray.cgColor
-        containerView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        containerView.layer.shadowOpacity = 1.0
-        containerView.layer.shadowRadius = 2
-        
-        customCollectionsTableView.layer.cornerRadius = 10
-        customCollectionsTableView.layer.masksToBounds = true
-        
-        view.addSubview(containerView)
-        containerView.addSubview(customCollectionsTableView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
