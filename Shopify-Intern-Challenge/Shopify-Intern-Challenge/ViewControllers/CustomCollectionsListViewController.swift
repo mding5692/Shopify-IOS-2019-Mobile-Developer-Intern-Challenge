@@ -42,7 +42,6 @@ extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath)
-        cell.textLabel?.textColor = .white
         cell.textLabel?.text = customCollectionsData[indexPath.row].collectionName
         return cell
     }
