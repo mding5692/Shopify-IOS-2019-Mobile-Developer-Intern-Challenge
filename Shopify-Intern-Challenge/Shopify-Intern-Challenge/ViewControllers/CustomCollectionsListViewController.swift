@@ -19,15 +19,22 @@ class CustomCollectionsListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Grabs custom collections data from Shopify API and populates customCollectionsTableView
+
         initiateCustomCollectionsTableView()
-        ShopifyAPIService.main.getCustomCollections() { collectionData in
-            self.customCollectionsData = collectionData
-            self.customCollectionsTableView.reloadData()
-        }
+        loadCustomCollectionsData()
     }
 
+    fileprivate func loadCustomCollectionsData() {
+        // Grabs custom collections data from Shopify API and populates customCollectionsTableView
+        DispatchQueue.global(qos: .userInteractive).async {
+            ShopifyAPIService.main.getCustomCollections() { collectionData in
+                self.customCollectionsData = collectionData
+                DispatchQueue.main.async {
+                    self.customCollectionsTableView.reloadData()
+                }
+            }
+        }
+    }
 }
 
 // MARK: -- Handles customCollectionsTableView delegate, datasource & related functions

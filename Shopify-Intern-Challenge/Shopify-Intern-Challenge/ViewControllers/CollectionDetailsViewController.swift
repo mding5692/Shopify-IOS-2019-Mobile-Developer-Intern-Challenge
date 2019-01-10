@@ -31,13 +31,21 @@ class CollectionDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         initiateProductsTableView()
         fillsOutCollectionDescription()
+        loadCollectionData()
+    }
+    
+    fileprivate func loadCollectionData() {
         // Grabs specific products associated with selected collection
-        ShopifyAPIService.main.getCollection(for: collectionID) { productData in
-            self.products = productData
-            self.productsTableView.reloadData()
+        DispatchQueue.global(qos: .userInteractive).async {
+            ShopifyAPIService.main.getCollection(for: self.collectionID) { productData in
+                self.products = productData
+                DispatchQueue.main.async {
+                    self.productsTableView.reloadData()
+                }
+            }
         }
     }
     

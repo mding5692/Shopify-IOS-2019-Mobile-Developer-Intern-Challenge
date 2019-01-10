@@ -9,24 +9,27 @@
 import Foundation
 import Alamofire
 
-
+// MARK: -- Specifies type of shopify data we're collecting
 enum ShopifyDataType: String {
     case custom_collections, collects, products
+}
+
+// MARK: -- Strings for Shopify API Endpoints
+enum ShopifyURLStrings: String {
+    case baseURL = "https://shopicruit.myshopify.com/admin/"
+    case custom_collections = "custom_collections.json"
+    case collects = "collects.json"
+    case products = "products.json"
+    case accessToken = "c32313df0d0ef512ca64d5b336a0d7c6"
 }
 
 // MARK: -- Singleton class for grabbing Shopify Collections Data
 class ShopifyAPIService {
     
     // MARK: -- Properties
-    static let main = ShopifyAPIService(baseURLString: "https://shopicruit.myshopify.com/admin/")
+    static let main = ShopifyAPIService(baseURLString: ShopifyURLStrings.baseURL.rawValue)
     var shopifyBaseURL = String()
-    
-    // MARK: -- Constants
-    let collectionsURLString = "custom_collections.json"
-    let collectsURLString = "collects.json"
-    let productsURLString = "products.json"
-    let accessToken = "c32313df0d0ef512ca64d5b336a0d7c6"
-    
+
     // MARK: -- Initialization
     fileprivate init(baseURLString: String) {
         self.shopifyBaseURL = baseURLString
@@ -36,8 +39,7 @@ class ShopifyAPIService {
     
     func getCustomCollections(completion: @escaping (_ collectionsData: [CustomCollection]) -> Void) {
         // Generates an endpoint to grab collection data from
-        let collectionsEndPoint = "\(shopifyBaseURL)\(collectionsURLString)?access_token=\(accessToken)"
-        
+        let collectionsEndPoint = "\(shopifyBaseURL)\(ShopifyURLStrings.custom_collections.rawValue)?access_token=\(ShopifyURLStrings.accessToken.rawValue)"
         // Grabs collection data from Shopify API using Alamofire
         AF.request(collectionsEndPoint, method: .get).responseJSON { response in
             guard let data = response.result.value as? [String: Any],
@@ -72,7 +74,7 @@ class ShopifyAPIService {
     
     func getCollection(for collectionID: Int, completion: @escaping (_ collectionData: [Product]) -> Void) {
         // Generates end point to figure out which products are included
-        let collectsEndPoint = "\(shopifyBaseURL)\(collectsURLString)?collection_id=\(collectionID)&access_token=\(accessToken)"
+        let collectsEndPoint = "\(shopifyBaseURL)\(ShopifyURLStrings.collects.rawValue)?collection_id=\(collectionID)&access_token=\(ShopifyURLStrings.accessToken.rawValue)"
         
         // Grabs collection data from Shopify API using Alamofire
         AF.request(collectsEndPoint, method: .get).responseJSON { response in
@@ -103,7 +105,7 @@ class ShopifyAPIService {
     
     func getProductData(for productIDs: String, completion: @escaping (_ productDetails: [Product]) -> Void) {
         // Generates endpoint to query product details
-        let productsEndPoint = "\(shopifyBaseURL)\(productsURLString)?ids=\(productIDs)&access_token=\(accessToken)"
+        let productsEndPoint = "\(shopifyBaseURL)\(ShopifyURLStrings.products.rawValue)?ids=\(productIDs)&access_token=\(ShopifyURLStrings.accessToken.rawValue)"
         
         // Grabs product details from Shopify API
         AF.request(productsEndPoint, method: .get).responseJSON { response in
