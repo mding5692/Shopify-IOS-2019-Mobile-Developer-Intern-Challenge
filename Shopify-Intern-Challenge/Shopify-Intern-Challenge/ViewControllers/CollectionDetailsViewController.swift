@@ -14,7 +14,6 @@ class CollectionDetailsViewController: UIViewController {
     @IBOutlet weak var productsTableView: UITableView!
     @IBOutlet weak var collectionDescriptionView: UIView!
     
-    
     // MARK: - Properties
     var collectionID = 0
     var selectedCollectionData: CustomCollection?
@@ -22,6 +21,7 @@ class CollectionDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         initiateProductsTableView()
         // Grabs specific products associated with selected collection
         ShopifyAPIService.main.getCollection(for: collectionID) { productData in
@@ -39,9 +39,14 @@ extension CollectionDetailsViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath)
-        cell.textLabel?.text = products[indexPath.row].productName
-//        cell.textLabel?.textColor = .white
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCell", for: indexPath) as! ProductTableViewCell
+        cell.productNameLabel.text = products[indexPath.row].productName
+        cell.productQuantityLabel.text = "\(products[indexPath.row].availableInventory) left in stock"
+        
+        if let collectionName = selectedCollectionData?.collectionName {
+            cell.collectionNameLabel.text = "\(collectionName)"
+        }
+        
         return cell
     }
     

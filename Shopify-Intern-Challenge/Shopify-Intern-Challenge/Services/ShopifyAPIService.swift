@@ -15,7 +15,6 @@ enum ShopifyDataType: String {
 }
 
 // MARK: -- Singleton class for grabbing Shopify Collections Data
-
 class ShopifyAPIService {
     
     // MARK: -- Properties
