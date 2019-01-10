@@ -7,18 +7,22 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomCollectionsListViewController: UIViewController {
     
+    // MARK: -- IBOutlets
     @IBOutlet weak var customCollectionsTableView: UITableView!
+    
+    // MARK: -- Properties
     var customCollectionsData = [CustomCollection]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Grabs data from Shopify API and populates customCollectionsTableView
+        // Grabs custom collections data from Shopify API and populates customCollectionsTableView
         initiateCustomCollectionsTableView()
-        ShopifyAPIService.main.grabCollections() { collectionData in
+        ShopifyAPIService.main.getCustomCollections() { collectionData in
             self.customCollectionsData = collectionData
             self.customCollectionsTableView.reloadData()
         }
@@ -26,25 +30,11 @@ class CustomCollectionsListViewController: UIViewController {
 
 }
 
-// MARK: -- Handles customCollectionsTableView delegate & datasource functions
+// MARK: -- Handles customCollectionsTableView delegate, datasource & related functions
 extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewDataSource {
     fileprivate func initiateCustomCollectionsTableView() {
         customCollectionsTableView.delegate = self
         customCollectionsTableView.dataSource = self
-        
-        // Shadow and curved borders for tableView
-        let containerView = UIView(frame: customCollectionsTableView.frame)
-        containerView.backgroundColor = .clear
-        containerView.layer.shadowColor = UIColor.darkGray.cgColor
-        containerView.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-        containerView.layer.shadowOpacity = 1.0
-        containerView.layer.shadowRadius = 2
-        
-        customCollectionsTableView.layer.cornerRadius = 10
-        customCollectionsTableView.layer.masksToBounds = true
-        
-        view.addSubview(containerView)
-        containerView.addSubview(customCollectionsTableView)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,13 +42,27 @@ extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath)
-        cell.textLabel?.text = customCollectionsData[indexPath.row].collectionName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath) as! CustomCollectionTableViewCell
+        
+        let currCollection = customCollectionsData[indexPath.row]
+        cell.collectionNameLabel.text = currCollection.collectionName
+        cell.collectionImageView.kf.setImage(with: currCollection.collectionImgURL)
+        cell.collectionDescriptionLabel.text = currCollection.collectionTitle
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        let selectedCollection = customCollectionsData[indexPath.row]
+        
+        // Sets data for collection details view controller
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let collectionDetailsVC = storyboard.instantiateViewController(withIdentifier: "CollectionDetails") as! CollectionDetailsViewController
+        collectionDetailsVC.title = selectedCollection.collectionName
+        collectionDetailsVC.selectedCollectionData = selectedCollection
+        collectionDetailsVC.collectionID = selectedCollection.collectionID
+        
+        self.navigationController?.pushViewController(collectionDetailsVC, animated: true)
     }
     
 }

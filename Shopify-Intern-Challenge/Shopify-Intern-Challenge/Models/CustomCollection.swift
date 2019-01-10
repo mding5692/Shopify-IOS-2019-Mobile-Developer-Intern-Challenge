@@ -13,4 +13,5 @@ struct CustomCollection {
     let collectionID: Int
     let collectionImgURL: URL
     let collectionTitle: String
+    let collectionDescription: String
 }
