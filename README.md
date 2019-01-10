@@ -1,6 +1,6 @@
-# My Submission for Shopify 2019 IOS Developer Intern Challenge
+# Shopify 2019 IOS Developer Intern Challenge
 
-Shopify-Intern-Challenge folder holds my app code
+The Shopify-Intern-Challenge folder holds the code for the IOS Swift app
 
 [Click here to see how I grabbed the data from Shopify API](https://github.com/mding5692/Shopify-IOS-2019-Mobile-Developer-Intern-Challenge/blob/master/Shopify-Intern-Challenge/Shopify-Intern-Challenge/Services/ShopifyAPIService.swift)
 
