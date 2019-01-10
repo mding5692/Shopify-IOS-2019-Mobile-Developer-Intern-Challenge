@@ -18,11 +18,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-EL-7hF" userLabel="BackgroundView">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="0.80784313725490198" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Shopify IOS Mobile Intern Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVK-O0-0jx">
-                                <rect key="frame" x="16" y="310" width="343" height="46"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopify IOS Mobile Intern Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVK-O0-0jx">
+                                <rect key="frame" x="35" y="331.5" width="305" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="fVK-O0-0jx" secondAttribute="height" multiplier="305:24" id="znu-Dj-cjm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -32,12 +35,10 @@
                         <constraints>
                             <constraint firstItem="YCd-EL-7hF" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="1ME-88-v6K"/>
                             <constraint firstItem="fVK-O0-0jx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1dA-DC-8pb"/>
-                            <constraint firstItem="fVK-O0-0jx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7IR-oA-2gn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="YCd-EL-7hF" secondAttribute="top" constant="20" id="9tR-Ku-L6i"/>
                             <constraint firstItem="YCd-EL-7hF" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="A52-gR-Qi2"/>
                             <constraint firstItem="fVK-O0-0jx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DBK-rD-SFI"/>
-                            <constraint firstItem="YCd-EL-7hF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IGv-bG-00f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fVK-O0-0jx" secondAttribute="trailing" constant="16" id="xoE-R1-bJU"/>
+                            <constraint firstItem="YCd-EL-7hF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MrD-Z0-CbT"/>
+                            <constraint firstItem="YCd-EL-7hF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="p56-H0-Smj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
