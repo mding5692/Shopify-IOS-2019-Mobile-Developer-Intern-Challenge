@@ -32,7 +32,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-Ku-7q2">
-                                                            <rect key="frame" x="15" y="8.5" width="285" height="102.5"/>
+                                                            <rect key="frame" x="15" y="8.5" width="335" height="102.5"/>
                                                             <subviews>
                                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P2q-6O-ewS">
                                                                     <rect key="frame" x="0.0" y="21.5" width="60" height="60"/>
@@ -42,7 +42,7 @@
                                                                     </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Ayq-SX-VsY">
-                                                                    <rect key="frame" x="70" y="0.0" width="215" height="102.5"/>
+                                                                    <rect key="frame" x="70" y="0.0" width="265" height="102.5"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cst-2J-mE1">
                                                                             <rect key="frame" x="0.0" y="0.0" width="203" height="50.5"/>
@@ -60,11 +60,20 @@
                                                                 </stackView>
                                                             </subviews>
                                                         </stackView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RightArrow" translatesAutoresizingMaskIntoConstraints="NO" id="S5y-Tb-4e1">
+                                                            <rect key="frame" x="344" y="47.5" width="15" height="25"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="15" id="2v6-OW-nwx"/>
+                                                                <constraint firstAttribute="height" constant="25" id="Z9T-pE-AXR"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="fiK-Ku-7q2" secondAttribute="trailing" constant="75" id="am9-JV-GMt" userLabel="trailing = Stack View.trailing + 16"/>
+                                                        <constraint firstAttribute="trailing" secondItem="S5y-Tb-4e1" secondAttribute="trailing" constant="16" id="Pgx-LP-qCC"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fiK-Ku-7q2" secondAttribute="trailing" constant="25" id="am9-JV-GMt"/>
                                                         <constraint firstItem="fiK-Ku-7q2" firstAttribute="leading" secondItem="Z1L-rY-vHT" secondAttribute="leading" constant="15" id="mMA-No-xLJ" userLabel="Stack View.leading = leading + 16"/>
+                                                        <constraint firstItem="S5y-Tb-4e1" firstAttribute="centerY" secondItem="Z1L-rY-vHT" secondAttribute="centerY" id="uXq-wC-8T1"/>
                                                         <constraint firstItem="fiK-Ku-7q2" firstAttribute="centerY" secondItem="Z1L-rY-vHT" secondAttribute="centerY" id="wom-QG-n9n"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
@@ -275,4 +284,7 @@
             <point key="canvasLocation" x="13.6" y="-708.39580209895053"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RightArrow" width="228" height="551"/>
+    </resources>
 </document>
