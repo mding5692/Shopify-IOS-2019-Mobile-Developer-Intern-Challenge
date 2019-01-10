@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CollectionDetailsViewController: UIViewController {
     
@@ -43,8 +44,10 @@ extension CollectionDetailsViewController: UITableViewDelegate, UITableViewDataS
         cell.productNameLabel.text = products[indexPath.row].productName
         cell.productQuantityLabel.text = "\(products[indexPath.row].availableInventory) left in stock"
         
-        if let collectionName = selectedCollectionData?.collectionName {
+        if let collectionName = selectedCollectionData?.collectionName,
+            let collectionImgURL = selectedCollectionData?.collectionImgURL {
             cell.collectionNameLabel.text = "\(collectionName)"
+            cell.collectionImageView.kf.setImage(with: collectionImgURL)
         }
         
         return cell

@@ -7,6 +7,7 @@ target 'Shopify-Intern-Challenge' do
 
   # Pods for Shopify-Intern-Challenge
     pod 'Alamofire', '~> 5.0.0.beta.1'
+    pod 'Kingfisher', '~> 5.0.1'
 
   target 'Shopify-Intern-ChallengeTests' do
     inherit! :search_paths

@@ -86,14 +86,18 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="119.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j9U-av-n4V">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="j9U-av-n4V">
                                                             <rect key="frame" x="16" y="9" width="343" height="102"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bn2-Ew-gV5">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="67" height="82"/>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Bn2-Ew-gV5">
+                                                                    <rect key="frame" x="0.0" y="21" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="dOS-Wt-iat"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="hw6-pQ-6Tu"/>
+                                                                    </constraints>
                                                                 </imageView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ymc-DZ-j1P">
-                                                                    <rect key="frame" x="77" y="0.0" width="266" height="102"/>
+                                                                    <rect key="frame" x="70" y="0.0" width="273" height="102"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="firstBaseline" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Wsc-Tq-QM4">
                                                                             <rect key="frame" x="0.0" y="0.0" width="197" height="52"/>
