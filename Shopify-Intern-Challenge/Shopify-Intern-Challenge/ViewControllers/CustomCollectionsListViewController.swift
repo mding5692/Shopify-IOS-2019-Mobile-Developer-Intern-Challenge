@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CustomCollectionsListViewController: UIViewController {
     
@@ -41,8 +42,13 @@ extension CustomCollectionsListViewController: UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath)
-        cell.textLabel?.text = customCollectionsData[indexPath.row].collectionName
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath) as! CustomCollectionTableViewCell
+        
+        let currCollection = customCollectionsData[indexPath.row]
+        cell.collectionNameLabel.text = currCollection.collectionName
+        cell.collectionImageView.kf.setImage(with: currCollection.collectionImgURL)
+        cell.collectionDescriptionLabel.text = currCollection.collectionTitle
+        
         return cell
     }
     

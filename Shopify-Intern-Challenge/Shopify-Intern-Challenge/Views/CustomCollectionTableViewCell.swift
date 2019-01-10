@@ -7,3 +7,9 @@
 //
 
 import UIKit
+
+class CustomCollectionTableViewCell: UITableViewCell {
+    @IBOutlet weak var collectionNameLabel: UILabel!
+    @IBOutlet weak var collectionImageView: UIImageView!
+    @IBOutlet weak var collectionDescriptionLabel: UILabel!
+}

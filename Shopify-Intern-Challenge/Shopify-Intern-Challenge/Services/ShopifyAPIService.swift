@@ -52,6 +52,7 @@ class ShopifyAPIService {
                 guard let id = collection["id"] as? Int,
                 let title = collection["title"] as? String,
                 let img = collection["image"] as? [String: Any],
+                let bodyHTML = collection["body_html"] as? String,
                 let imgURLString = img["src"] as? String else {
                         continue
                 }
@@ -61,7 +62,7 @@ class ShopifyAPIService {
                     continue
                 }
                 
-                let customCollection = CustomCollection(collectionName: name, collectionID: id, collectionImgURL: imgURL, collectionTitle: title)
+                let customCollection = CustomCollection(collectionName: name, collectionID: id, collectionImgURL: imgURL, collectionTitle: title, collectionDescription: bodyHTML)
                 customCollectionResults.append(customCollection)
             }
             
