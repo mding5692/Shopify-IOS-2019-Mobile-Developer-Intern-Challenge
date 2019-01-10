@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCd-EL-7hF" userLabel="BackgroundView">
-                                <rect key="frame" x="0.0" y="10" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901957" blue="0.80784313725490198" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shopify IOS Mobile Intern Challenge" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVK-O0-0jx">
@@ -31,14 +31,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="0.80784313730000001" alpha="0.84999999999999998" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YCd-EL-7hF" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="1ME-88-v6K"/>
                             <constraint firstItem="fVK-O0-0jx" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1dA-DC-8pb"/>
                             <constraint firstItem="YCd-EL-7hF" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="A52-gR-Qi2"/>
                             <constraint firstItem="fVK-O0-0jx" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="DBK-rD-SFI"/>
-                            <constraint firstItem="YCd-EL-7hF" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="MrD-Z0-CbT"/>
-                            <constraint firstItem="YCd-EL-7hF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="p56-H0-Smj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="YCd-EL-7hF" secondAttribute="top" id="Gn9-Cc-ELv"/>
+                            <constraint firstItem="YCd-EL-7hF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wv0-aw-9Vo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
