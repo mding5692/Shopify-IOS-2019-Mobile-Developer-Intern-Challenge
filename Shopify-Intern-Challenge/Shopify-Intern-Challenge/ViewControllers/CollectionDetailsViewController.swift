@@ -9,6 +9,12 @@
 import UIKit
 import Kingfisher
 
+// MARK: -- For missing content in Collection Descriptions
+enum MissingContentWarning: String {
+    case noCollectionTitle = "No collection title set right now"
+    case noCollectionDescription = "No collection description set right now"
+}
+
 class CollectionDetailsViewController: UIViewController {
     
     // MARK: -- IBOutlets
@@ -36,8 +42,19 @@ class CollectionDetailsViewController: UIViewController {
     }
     
     fileprivate func fillsOutCollectionDescription() {
-        collectionTitleLabel.text = selectedCollectionData?.collectionTitle ?? ""
-        collectionDescriptionLabel.text = selectedCollectionData?.collectionDescription ?? ""
+        // Gives users warning if missing collection title or description
+        collectionTitleLabel.text = selectedCollectionData?.collectionTitle ?? MissingContentWarning.noCollectionTitle.rawValue
+        collectionDescriptionLabel.text = selectedCollectionData?.collectionDescription ?? MissingContentWarning.noCollectionDescription.rawValue
+        
+        if let title = selectedCollectionData?.collectionTitle,
+            title.isEmpty {
+            collectionTitleLabel.text = MissingContentWarning.noCollectionTitle.rawValue
+        }
+        
+        if let desc = selectedCollectionData?.collectionDescription,
+            desc.isEmpty {
+            collectionDescriptionLabel.text = MissingContentWarning.noCollectionDescription.rawValue
+        }
         
         if let collectionImgURL = selectedCollectionData?.collectionImgURL {
             collectionImageView.kf.setImage(with: collectionImgURL)
