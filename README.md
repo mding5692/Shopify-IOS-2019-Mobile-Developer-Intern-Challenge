@@ -1,4 +1,4 @@
-#My Submission for Shopify 2019 IOS Developer Intern Challenge
+# My Submission for Shopify 2019 IOS Developer Intern Challenge
 
 Shopify-Intern-Challenge folder holds my app code
 
