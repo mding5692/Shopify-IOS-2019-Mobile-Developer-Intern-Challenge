@@ -9,9 +9,17 @@
 import Foundation
 import Alamofire
 
-
+// MARK: -- Specifies type of shopify data we're collecting
 enum ShopifyDataType: String {
     case custom_collections, collects, products
+}
+
+// MARK: -- Constants for Shopify API Endpoints
+enum ShopifyURLParts: String {
+    case custom_collections = "custom_collections.json"
+    case collects = "collects.json"
+    case products = "products.json"
+    case accessToken = "c32313df0d0ef512ca64d5b336a0d7c6"
 }
 
 // MARK: -- Singleton class for grabbing Shopify Collections Data
@@ -37,7 +45,6 @@ class ShopifyAPIService {
     func getCustomCollections(completion: @escaping (_ collectionsData: [CustomCollection]) -> Void) {
         // Generates an endpoint to grab collection data from
         let collectionsEndPoint = "\(shopifyBaseURL)\(collectionsURLString)?access_token=\(accessToken)"
-        
         // Grabs collection data from Shopify API using Alamofire
         AF.request(collectionsEndPoint, method: .get).responseJSON { response in
             guard let data = response.result.value as? [String: Any],
