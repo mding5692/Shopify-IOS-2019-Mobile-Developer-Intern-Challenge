@@ -14,6 +14,9 @@ class CollectionDetailsViewController: UIViewController {
     // MARK: -- IBOutlets
     @IBOutlet weak var productsTableView: UITableView!
     @IBOutlet weak var collectionDescriptionView: UIView!
+    @IBOutlet weak var collectionImageView: UIImageView!
+    @IBOutlet weak var collectionTitleLabel: UILabel!
+    @IBOutlet weak var collectionDescriptionLabel: UILabel!
     
     // MARK: - Properties
     var collectionID = 0
@@ -24,6 +27,7 @@ class CollectionDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         initiateProductsTableView()
+        fillsOutCollectionDescription()
         // Grabs specific products associated with selected collection
         ShopifyAPIService.main.getCollection(for: collectionID) { productData in
             self.products = productData
@@ -31,6 +35,14 @@ class CollectionDetailsViewController: UIViewController {
         }
     }
     
+    fileprivate func fillsOutCollectionDescription() {
+        collectionTitleLabel.text = selectedCollectionData?.collectionTitle ?? ""
+        collectionDescriptionLabel.text = selectedCollectionData?.collectionDescription ?? ""
+        
+        if let collectionImgURL = selectedCollectionData?.collectionImgURL {
+            collectionImageView.kf.setImage(with: collectionImgURL)
+        }
+    }
 }
 
 // MARK: -- Handles productsTableView delegate & datasource
