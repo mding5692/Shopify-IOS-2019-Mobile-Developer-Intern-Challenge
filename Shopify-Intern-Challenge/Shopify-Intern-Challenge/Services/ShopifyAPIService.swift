@@ -94,9 +94,7 @@ class ShopifyAPIService {
             productIDsKey.removeLast()
             
             // Grabs product details from Shopify based on product IDs and converts into easy-to-read format
-            var products = [Product]()
-            self.getProductData(for: productIDsKey) { productData in
-                products = productData
+            self.getProductData(for: productIDsKey) { products in
                 completion(products)
             }
     
